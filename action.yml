@@ -21,7 +21,7 @@ inputs:
     description: Command Line Arguments for the packer build command.
     required: false
 
-# The entire logic runs withing a Docker container
+# The entire logic runs within a Docker container
 runs:
   using: 'docker'
   image: 'Dockerfile'

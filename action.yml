@@ -1,13 +1,13 @@
 name: Packer for GCE
 desscription: Custom Packer Github Action for Google Compute Engine
 inputs:
-  template_file: 
+  main_file: 
     description: Packer configuration file written in json or HCL
     required: true
-  var_file:
+  variable_file:
     description: File containing all the the variables for the Packer Confif file
     required: false
-  working_dir:
+  working_directory:
     description: Directory which contains your configuration file and your var file. If not specified, the home directory is assigned as default.
     required: false
     default: '.'

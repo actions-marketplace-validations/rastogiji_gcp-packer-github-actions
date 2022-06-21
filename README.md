@@ -12,7 +12,7 @@ This action currently supports 3 input variables.
 
 ## Authentication
 
-For this Github action to work, you need to have checked out the repository in your Github Actions runner and configured authentication with GCP.
+For this Github action to work, you need to have first checked out the repository on your Github Actions runner and configured authentication with GCP.
 
 To configure authentication with GCP, you can either use Workload Identity Federation(recommended) or use a long-lived Service Account Key to impersonate a GCP Service Account.
 

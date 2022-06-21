@@ -16,6 +16,10 @@ inputs:
     description: Directory which contains your configuration file and your var file. If not specified, the home directory is assigned as default.
     required: false
     default: '.'
+  
+  arguments:
+    description: Command Line Arguments for the packer build command.
+    required: false
 
 # The entire logic runs withing a Docker container
 runs:

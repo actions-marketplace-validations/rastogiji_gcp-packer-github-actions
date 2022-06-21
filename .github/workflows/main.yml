@@ -1,0 +1,25 @@
+name: Release Test
+on:
+  push:
+    branches: [master]
+
+jobs:
+  packer-build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checking out the source Code
+      - name: Checkout the Source Code
+        uses: "actions/checkout@v3"
+
+      - name: Configure Authentication with GCP
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "${{ secrets.ACTIONS_SA_KEY }}"
+
+      - name: Build AMI
+        uses: "rastogiji/gcp-packer-github-actions@v1.0.0-beta"
+        with:
+          arguments: "-color=false -on-error=cleanup"
+          main_file: main.json
+          variable_file: variables.json
+          working_directory: .github/iac/

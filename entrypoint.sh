@@ -20,5 +20,11 @@ else
     var_command="-var-file=$INPUT_VARIABLE_FILE"
 fi
 
+if [[ -z "${INPUT_ARGUMENTS}" ]]; then
+    ARGUMENTS=""
+else
+    ARGUMENTS="${INPUT_ARGUMENTS}"
+
+
 # Running Packer Build
-packer build ${var_command} ${INPUT_MAIN_FILE}
+packer build ${var_command} ${INPUT_MAIN_FILE} ${ARGUMENTS}

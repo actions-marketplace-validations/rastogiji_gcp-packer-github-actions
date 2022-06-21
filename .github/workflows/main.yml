@@ -19,7 +19,6 @@ jobs:
       - name: Build AMI
         uses: ./
         with:
-          arguments: "-color=false -on-error=cleanup"
           main_file: main.json
           variable_file: variables.json
           working_directory: .github/iac/

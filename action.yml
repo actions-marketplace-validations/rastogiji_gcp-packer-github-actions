@@ -2,6 +2,7 @@ name: Packer for GCE
 author: Animesh rastogi <animesh.rastogicloud@gmail.com>
 desscription: Custom Packer Github Action for Google Compute Engine
 
+# Defining Inputs to the Action. These can be specified under with section of a Github Actions Workflow
 inputs:
   main_file: 
     description: Packer configuration file written in json or HCL
@@ -16,6 +17,7 @@ inputs:
     required: false
     default: '.'
 
+# The entire logic runs withing a Docker container
 runs:
   using: 'docker'
   image: 'Dockerfile'

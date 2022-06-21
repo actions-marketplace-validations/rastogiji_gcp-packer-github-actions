@@ -35,12 +35,14 @@ jobs:
       - name: Checkout the Source Code
         uses: "actions/checkout@v3"
 
+    # Authenticating with GCP using Service Account Key
       - name: Configure Authentication with GCP
         uses: "google-github-actions/auth@v0"
         with:
           credentials_json: "${{ secrets.ACTIONS_SA_KEY }}"
 
-      - name: Build AMI
+    # Building Image using Packer
+      - name: Build Image
         uses: "rastogiji/gcp-packer-github-actions@v1.0.0-beta"
         with:
           main_file: main.json
@@ -53,4 +55,4 @@ Pull Requests are welcome. We are trying to add support for AWS and Azure.
 
 ## LICENSE
 
-[MIT]()
+[MIT](./LICENSE)

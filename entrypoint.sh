@@ -21,4 +21,5 @@ else
 fi
 
 # Running Packer Build
+echo "packer build ${var_command} ${INPUT_MAIN_FILE} ${INPUT_ARGUMENTS}"
 packer build ${var_command} ${INPUT_MAIN_FILE} ${INPUT_ARGUMENTS}

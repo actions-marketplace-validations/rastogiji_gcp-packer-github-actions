@@ -39,7 +39,7 @@ jobs:
       - name: Configure Authentication with GCP
         uses: "google-github-actions/auth@v0"
         with:
-          credentials_json: "${{ secrets.ACTIONS_SA_KEY }}"
+          credentials_json: "${{ secrets.SA_KEY }}"
 
     # Building Image using Packer
       - name: Build Image

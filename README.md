@@ -6,9 +6,10 @@ This is a custom Github Action to build Packer Images on Cloud. This only has su
 
 This action currently supports 3 input variables.
 
-- **main_file(json)**: This is the configuration file which contains your Packer configuration.
-- **variable_file(json)**: This is the file which contains all the variables needed by your main configuration file.
-- **working_directory**: This is the directory which contains your packer configuration code relative to the root of your repository. Defaults to root directory(.)in the repository
+- **main_file(Required)**: This is the configuration file which contains your Packer configuration. Only has support for the JSON types as of now.
+- **variable_file(Optional)**: This is the file which contains all the variables needed by your main configuration file. Only has support for the JSON type as of now.
+- **working_directory(Optional)**: This is the directory which contains your packer configuration code relative to the root of your repository. Defaults to root directory(.)in the repository.
+- **arguments(Optional)**: These are the Command Line Arguments with the packer build command. Refer the [documentation](https://www.packer.io/docs/commands/build)
 
 ## Authentication
 

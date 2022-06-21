@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+# Changing Directory to the Input Working Directory
 cd "$INPUT_WORKING_DIRECTORY"
 
 # Checking whether Main File exists and is a json file

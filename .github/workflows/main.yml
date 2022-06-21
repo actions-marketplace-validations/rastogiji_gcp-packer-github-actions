@@ -21,5 +21,6 @@ jobs:
       - name: Build AMI
         uses: ./
         with:
-          main_file: main
+          main_file: main.json
+          variable_file: variable
           working_directory: .github/iac/

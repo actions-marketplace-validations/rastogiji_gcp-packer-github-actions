@@ -22,5 +22,4 @@ jobs:
         uses: ./
         with:
           main_file: main.json
-          variable_file: variables.json
           working_directory: .github/iac/

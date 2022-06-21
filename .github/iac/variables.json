@@ -1,4 +1,0 @@
-{
-    "account_file": "{{ env `GOOGLE_APPLICATION_CREDENTIALS` }}",
-    "PROJECT_ID": "stage-72012"
-}

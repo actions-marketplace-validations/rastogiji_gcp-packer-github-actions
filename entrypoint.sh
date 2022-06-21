@@ -1,22 +1,22 @@
 #!/bin/bash
 set -e
 
-cd "$INPUT_WORKINGDIRECTORY"
+cd "$INPUT_WORKING_DIRECTORY"
 
-if ( [ ! -f "${INPUT_MAINFILE}" ] &&  $INPUT_MAINFILE != *.json ] ]); then
-    echo "${INPUT_MAINFILE} does not exit in the working directory (${INPUT_WORKINGDIRECTORY})"
+if ( [ ! -f "${INPUT_MAIN_FILE}" ] &&  $INPUT_MAIN_FILE != *.json ] ]); then
+    echo "${INPUT_MAIN_FILE} does not exit in the working directory (${INPUT_WORKING_DIRECTORY})"
     exit 1
 fi
 
-if [[ ! -f "${INPUT_VARIABLEFILE}" ]] && [[ $INPUT_VARIABLEFILE != *.json ]]; then
-    echo "$INPUT_VARIABLEFILE not found in the working directory (${INPUT_WORKINGDIRECTORY})"
+if [[ ! -f "${INPUT_VARIABLE_FILE}" ]] && [[ $INPUT_VARIABLE_FILE != *.json ]]; then
+    echo "$INPUT_VARIABLE_FILE not found in the working directory (${INPUT_WORKING_DIRECTORY})"
     exit 1
 fi
 
 var_command=""
-if [ -f "$INPUT_VARIABLEFILE" ]; then
-    var_command="-var-file=$INPUT_VARIABLEFILE"
+if [ -f "$INPUT_VARIABLE_FILE" ]; then
+    var_command="-var-file=$INPUT_VARIABLE_FILE"
 fi
 
 echo "Beginning running packer build ..."
-packer build ${var_command} ${INPUT_MAINFILE}
+packer build ${var_command} ${INPUT_MAIN_FILE}

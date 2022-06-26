@@ -21,7 +21,7 @@ Please refer to [Google Auth](https://github.com/google-github-actions/auth) rep
 
 ## Sample Usage
 
-```bash
+```yaml
 name: Build Packer Image on GCP
 on:
   push:
@@ -31,25 +31,23 @@ jobs:
   packer-build:
     runs-on: ubuntu-latest
     steps:
-
-    # Checking out the source Code
+      # Checking out the source Code
       - name: Checkout the Source Code
         uses: "actions/checkout@v3"
 
-    # Authenticating with GCP using Service Account Key
+      # Authenticating with GCP using Service Account Key
       - name: Configure Authentication with GCP
         uses: "google-github-actions/auth@v0"
         with:
           credentials_json: "${{ secrets.SA_KEY }}"
 
-    # Building Image using Packer
+      # Building Image using Packer
       - name: Build Image
-        uses: "rastogiji/gcp-packer-github-actions@v1.0.0-beta"
+        uses: "rastogiji/gcp-packer-github-actions@v1.0.1-beta"
         with:
           main_file: main.json
           variable_file: variables.json
           working_directory: packer/
-
 ```
 
 Pull Requests are welcome. We are trying to add support for AWS and Azure.

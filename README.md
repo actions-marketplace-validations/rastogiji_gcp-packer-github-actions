@@ -43,7 +43,7 @@ jobs:
 
       # Building Image using Packer
       - name: Build Image
-        uses: "rastogiji/gcp-packer-github-actions@v1.0.1-beta"
+        uses: "rastogiji/gcp-packer-github-actions@v1.0.1"
         with:
           main_file: main.json
           variable_file: variables.json
